@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, Code2, Lightbulb, Target, ArrowRight } from 'lucide-react';
+import { ExternalLink, Code2, Lightbulb, Target } from 'lucide-react';
 
 const projects = [
   {
@@ -13,19 +13,19 @@ const projects = [
     purpose: "Applied Blockchain technology to develop a decentralized knowledge-sharing research project, enabling transparent content ownership and token-based incentives.",
     learnings: "Gained hands-on experience integrating smart contracts with a modern web frontend and exploring decentralized application architecture.",
     tech: ["Blockchain", "ReactJS", "TypeScript", "Solidity"],
-    link: "#"
+    link: "https://knowledgeshare.nusuit.org"
   },
   {
     id: 2,
     title: "Knop Flashcard",
     date: "2024",
-    category: "Mobile App",
+    category: "Mobile / Web / Desktop",
     image: "https://picsum.photos/seed/flashcard/800/600",
     fit: "cover",
     purpose: "Developed a smart learning app that integrates LLMs to generate explanations and implements the SM-2 spaced repetition algorithm to optimize study scheduling.",
     learnings: "Deepened understanding of the SM-2 algorithm and learned to integrate LLM APIs for context-aware, AI-powered learning experiences.",
     tech: ["Dart", "Flutter", "LLM APIs", "SM-2 Algorithm"],
-    link: "#"
+    link: "https://knop.nusuit.org"
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const projects = [
     purpose: "Built a mobile application to manage gym members, track memberships, and streamline daily gym operations for staff and administrators.",
     learnings: "Improved skills in mobile UI design, local data persistence, and building role-based access flows for real-world business scenarios.",
     tech: ["React Native", "Node.js", "SQLite"],
-    link: "#"
+    link: "https://mobile.nusuit.org"
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ const projects = [
     purpose: "Developed an Optical Mark Recognition mobile application that automates test grading by scanning and interpreting answer sheets from a device camera.",
     learnings: "Learned image processing techniques and how to apply computer vision algorithms in a mobile context for real-time document scanning.",
     tech: ["Flutter", "OpenCV", "Dart", "Image Processing"],
-    link: "#"
+    link: "https://mobile.nusuit.org"
   },
   {
     id: 5,
@@ -63,7 +63,7 @@ const projects = [
     purpose: "Fullstack web application featuring user authentication, content posting, comments, and social interactions powered by a RESTful API backend.",
     learnings: "Strengthened fullstack skills by building a complete auth flow with JWT, designing REST APIs, and managing state across a multi-page React app.",
     tech: ["ReactJS", "Node.js", "ExpressJS", "MongoDB"],
-    link: "#"
+    link: "https://firstproj.nusuit.org"
   },
   {
     id: 6,
@@ -76,7 +76,22 @@ const projects = [
     purpose: "Built 'Focus Blocker' (with a Pomodoro timer to block distracting sites) and 'Extract Color' (converts colors from any page to Tailwind CSS syntax).",
     learnings: "Learned the Chrome Extensions API, background service workers, and how to build minimal but highly practical utility tools with vanilla web technologies.",
     tech: ["HTML", "CSS", "JavaScript", "Chrome Extensions API"],
-    link: "#"
+    link: "https://microsoftedge.microsoft.com/addons/detail/pastel-extractor/aiokdckcigpamfmaahjfdnkogmkeocag",
+    link2: "https://microsoftedge.microsoft.com/addons/detail/focus-blocker/aliehoiagajkkmkajmpiiabjdlhgbklj",
+    linkLabel: "Pastel Extractor",
+    link2Label: "Focus Blocker"
+  },
+  {
+    id: 7,
+    title: "Portfolio Stock Management",
+    date: "2025",
+    category: "Fullstack Web",
+    image: "https://picsum.photos/seed/stock/800/600",
+    fit: "cover",
+    purpose: "A portfolio stock management web app inspired by Snowball Analytics. Track investments, analyze performance, and visualize portfolio allocation with a clean, data-driven interface.",
+    learnings: "Deepened knowledge of financial data visualization, real-time data handling, and building dashboard-style interfaces for complex datasets.",
+    tech: ["ReactJS", "TypeScript", "Node.js", "Chart.js"],
+    link: "https://portfolio.nusuit.org"
   }
 ];
 
@@ -85,6 +100,10 @@ export default function Projects() {
 
   const nextProject = () => {
     setActiveIndex((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
   const currentProject = projects[activeIndex];
@@ -231,30 +250,62 @@ export default function Projects() {
 
                             {/* Action Area */}
                             <div className="pt-6 border-t-2 border-[#4a3728]/10 flex justify-between items-center">
-                                <a 
-                                    href={currentProject.link}
-                                    className="text-[#4a3728] font-bold hover:text-[#556b2f] transition-colors flex items-center gap-2 group font-serif"
-                                >
-                                    View Live <ExternalLink size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
-                                </a>
+                                <div className="flex flex-col gap-1">
+                                  {currentProject.link2 ? (
+                                    <>
+                                      <a href={currentProject.link} target="_blank" rel="noopener noreferrer"
+                                        className="text-[#4a3728] font-bold hover:text-[#556b2f] transition-colors flex items-center gap-1.5 group font-serif text-sm">
+                                        {currentProject.linkLabel ?? 'View Live'} <ExternalLink size={13} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                                      </a>
+                                      <a href={currentProject.link2} target="_blank" rel="noopener noreferrer"
+                                        className="text-[#4a3728] font-bold hover:text-[#556b2f] transition-colors flex items-center gap-1.5 group font-serif text-sm">
+                                        {currentProject.link2Label ?? 'View Live 2'} <ExternalLink size={13} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                                      </a>
+                                    </>
+                                  ) : (
+                                    <a href={currentProject.link} target="_blank" rel="noopener noreferrer"
+                                      className="text-[#4a3728] font-bold hover:text-[#556b2f] transition-colors flex items-center gap-2 group font-serif">
+                                      View Live <ExternalLink size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+                                    </a>
+                                  )}
+                                </div>
 
-                                {/* Triangle Next Button */}
-                                <button
-                                    onClick={nextProject}
-                                    className="relative w-12 h-12 flex items-center justify-center group"
-                                    aria-label="Next Project"
-                                >
-                                    <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm">
-                                        <path 
-                                            d="M 30 20 L 80 50 L 30 80 Z" 
-                                            fill="#f4f1ea" 
-                                            stroke="#4a3728" 
-                                            strokeWidth="3" 
-                                            strokeLinejoin="round"
-                                            className="group-hover:fill-[#556b2f] group-hover:stroke-[#556b2f] transition-all duration-300" 
-                                        />
-                                    </svg>
-                                </button>
+                                <div className="flex items-center gap-1">
+                                  {/* Triangle Prev Button */}
+                                  <button
+                                      onClick={prevProject}
+                                      className="relative w-10 h-10 flex items-center justify-center group"
+                                      aria-label="Previous Project"
+                                  >
+                                      <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm">
+                                          <path
+                                              d="M 70 20 L 20 50 L 70 80 Z"
+                                              fill="#f4f1ea"
+                                              stroke="#4a3728"
+                                              strokeWidth="3"
+                                              strokeLinejoin="round"
+                                              className="group-hover:fill-[#556b2f] group-hover:stroke-[#556b2f] transition-all duration-300"
+                                          />
+                                      </svg>
+                                  </button>
+                                  {/* Triangle Next Button */}
+                                  <button
+                                      onClick={nextProject}
+                                      className="relative w-10 h-10 flex items-center justify-center group"
+                                      aria-label="Next Project"
+                                  >
+                                      <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm">
+                                          <path 
+                                              d="M 30 20 L 80 50 L 30 80 Z" 
+                                              fill="#f4f1ea" 
+                                              stroke="#4a3728" 
+                                              strokeWidth="3" 
+                                              strokeLinejoin="round"
+                                              className="group-hover:fill-[#556b2f] group-hover:stroke-[#556b2f] transition-all duration-300" 
+                                          />
+                                      </svg>
+                                  </button>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
