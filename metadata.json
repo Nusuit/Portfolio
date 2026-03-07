@@ -1,0 +1,5 @@
+{
+  "name": "Immersive 3D Portfolio",
+  "description": "A 3D interactive portfolio website featuring a personal avatar, working experience, education, and projects using Three.js.",
+  "requestFramePermissions": []
+}
