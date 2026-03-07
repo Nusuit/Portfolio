@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Calendar, MapPin, Award, Feather } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Calendar, MapPin, Award, Feather, ExternalLink } from 'lucide-react';
 
 const experiences = [
   {
     company: "Cohart",
+    link: "https://www.cohart.com/",
     logo: "https://picsum.photos/seed/cohart/200/200",
     background: "/images/cohart.png",
     role: "Intern Frontend Developer",
@@ -18,6 +19,7 @@ const experiences = [
   },
   {
     company: "Wisdom Engineering & Business Solutions",
+    link: "https://wisdomrobotics.org/",
     logo: "https://picsum.photos/seed/wisdom/200/200",
     background: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2000&auto=format&fit=crop",
     role: "Intern Fullstack Developer",
@@ -31,6 +33,7 @@ const experiences = [
   },
   {
     company: "TP Law Company",
+    link: "https://tplaw.com.vn/",
     logo: "https://picsum.photos/seed/tplaw/200/200",
     background: "/images/tplaw.png",
     role: "Technical Support",
@@ -107,6 +110,9 @@ export default function Experience() {
             >
               <div className="border-b-2 border-[#4a3728]/10 pb-4 mb-6">
                 <h2 className="text-4xl font-serif font-bold text-[#4a3728] mb-2">{currentExp.company}</h2>
+                <a href={currentExp.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-hand text-[#556b2f] hover:text-[#a0522d] transition-colors mb-1">
+                  Visit This Company <ExternalLink size={13} />
+                </a>
                 <h3 className="text-xl font-hand font-bold text-[#556b2f]">{currentExp.role}</h3>
                 <div className="flex gap-4 mt-2 text-[#a0522d] font-hand text-lg">
                     <span className="flex items-center gap-1"><Calendar size={16} /> {currentExp.period}</span>
