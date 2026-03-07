@@ -50,6 +50,7 @@ export default function Layout() {
     { path: '/experience', label: 'Experience' },
     { path: '/education', label: 'Education' },
     { path: '/projects', label: 'Projects' },
+    { path: '/cv', label: 'CV' },
   ];
 
   return (
@@ -124,9 +125,9 @@ export default function Layout() {
       {/* Footer / Socials */}
       <footer className="p-6 md:px-12 flex justify-between items-end text-[#4a3728]/60 text-sm z-50 relative">
         <div className="flex gap-6">
-          <a href="#" className="hover:text-[#556b2f] transition-colors hover:scale-110 transform duration-200"><Github size={24} /></a>
-          <a href="#" className="hover:text-[#556b2f] transition-colors hover:scale-110 transform duration-200"><Linkedin size={24} /></a>
-          <a href="#" className="hover:text-[#a0522d] transition-colors hover:scale-110 transform duration-200"><Mail size={24} /></a>
+          <a href="https://github.com/nusuit" target="_blank" rel="noopener noreferrer" className="hover:text-[#556b2f] transition-colors hover:scale-110 transform duration-200"><Github size={24} /></a>
+          <a href="https://linkedin.com/in/ki%C3%AAn-phan-huy-6106a4252" target="_blank" rel="noopener noreferrer" className="hover:text-[#556b2f] transition-colors hover:scale-110 transform duration-200"><Linkedin size={24} /></a>
+          <a href="mailto:huykien283@gmail.com" className="hover:text-[#a0522d] transition-colors hover:scale-110 transform duration-200"><Mail size={24} /></a>
         </div>
         <div className="font-serif italic">
           © 2026 Handcrafted Portfolio
