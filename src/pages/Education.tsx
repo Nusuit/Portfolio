@@ -48,21 +48,21 @@ const categories = [
         title: "Meta Frontend Developer Course",
         subtitle: "Continuous Learning — Self-paced",
         description: "Worked through Meta's professional frontend development curriculum, covering React fundamentals, UI/UX principles, version control, and modern JavaScript practices.",
-        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2000&auto=format&fit=crop"
+        image: "/images/ongoing.png"
       },
       {
         id: 'f8-fullstack',
         title: "Full-Stack Web Development",
         subtitle: "F8 (fullstack.edu.vn) — Self-paced",
         description: "Completed an in-depth fullstack web development course by F8, covering HTML/CSS, JavaScript, ReactJS, Node.js, and database management through hands-on projects.",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop"
+        image: "/images/ongoing.png"
       },
       {
         id: 'aws-self',
         title: "AWS Cloud Computing",
         subtitle: "Self-Study via YouTube",
         description: "Self-studied AWS cloud computing concepts including EC2, S3, Lambda, and cloud architecture patterns to support backend and deployment skills in personal projects.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop"
+        image: "/images/ongoing.png"
       }
     ]
   }
