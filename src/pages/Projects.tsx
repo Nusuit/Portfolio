@@ -86,7 +86,7 @@ const projects = [
     title: "Portfolio Stock Management",
     date: "2025",
     category: "Fullstack Web",
-    image: "https://picsum.photos/seed/stock/800/600",
+    image: "/images/portfolio_stock.png",
     fit: "cover",
     purpose: "A portfolio stock management web app inspired by Snowball Analytics. Track investments, analyze performance, and visualize portfolio allocation with a clean, data-driven interface.",
     learnings: "Deepened knowledge of financial data visualization, real-time data handling, and building dashboard-style interfaces for complex datasets.",
